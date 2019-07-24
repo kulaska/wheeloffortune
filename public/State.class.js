@@ -12,9 +12,7 @@ class State {
     
     saveToStorage() {
       storage.setItem('casinoDataWinner', this.data.winner);
-      storage.setItem('casinoDataRotation', this.data.rotation);
-
-      console.log(this.data);
+      storage.setItem('casinoDataRotation', this.data.rotation);      
     }
   
     getFromStorage() {

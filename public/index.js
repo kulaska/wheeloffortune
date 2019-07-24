@@ -7,16 +7,17 @@ window.onload = () => {
   const button = document.querySelector('.button button');
   const winnerSpan = document.querySelector('.winner span');
 
-  wheel.style.transform = `rotate(${state.getRotation()}deg)`;  
+  wheel.style.transform = `rotate(${state.getRotation()}deg)`;
+  winnerSpan.innerHTML = state.getWinner(); 
 
 
   const onClick = () => {
+    // abstract that
     let winnerDegrees = randomizer(360);
     let winner = Math.floor(winnerDegrees / 36);
     winner = winner == 0 ? 10 : winner;
     
-    let time = 5; 
-    
+    let time = 5;     
     
     updateKeyFrames(winnerDegrees, time);  
     wheel.classList.add('wheel__animated');
@@ -30,6 +31,7 @@ window.onload = () => {
     },
       time * 1000 - 50);
 
+      // clean this up
     setTimeout(() => {
       wheel.classList.remove('wheel__animated');
       button.disabled = false;
@@ -42,4 +44,4 @@ window.onload = () => {
 
   window.onClick = onClick;
 
-}
+};
