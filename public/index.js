@@ -1,5 +1,5 @@
 import state  from './State.class.js';
-import { randomizer, updateKeyFrames } from './randomizer.js';
+import { randomizer, updateKeyFrames } from './utils.js/';
 
 
 window.onload = () => {
@@ -31,7 +31,7 @@ window.onload = () => {
     },
       time * 1000 - 50);
 
-      // clean this up
+    // clean this up
     setTimeout(() => {
       wheel.classList.remove('wheel__animated');
       button.disabled = false;

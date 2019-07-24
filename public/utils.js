@@ -30,3 +30,5 @@ export const randomizer = (higherBorder) => {
     return result;
 };
 
+// export function getSumOfWinning
+
