@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+    <head>
+        <title>Wheel of fortune</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+
+    <body>
+        <div class="wrapper" 
+            style="width: 720px;
+                margin: auto; 
+                display:flex;
+                flex-wrap: wrap;
+                justify-content: center">
+
+            <div class="wheel-wrapper">
+    
+
+                <div class="wheel">
+
+                    <div class="line">
+                        <span class="first">10</span>
+                        <span class="second">9</span>
+                    </div>
+
+                    <div class="line">
+                        <span class="first">8</span>
+                        <span class="second">7</span>
+                    </div> 
+
+                    <div class="line">
+                        <span class="first">6</span>
+                        <span class="second">5</span>
+                    </div> 
+
+                    <div class="line">
+                        <span class="first">4</span>
+                        <span class="second">3</span>
+                    </div> 
+                    
+                    <div class="line">
+                        <span class="first">2</span>
+                        <span class="second">1</span>
+                    </div>  
+
+                
+                </div> 
+
+
+    
+            <div class="triangle"></div>
+
+            </div>
+
+                <div class="button"><button onclick="onClick()">Roll</button></div>
+            
+                <div class="winner">The winner is: <span></span></div>
+
+        </div>
+
+        <div class="betting-block">
+            <input value="5000" />
+        </div>
+    </body>
+
+    <script type="module" src="index.js"></script>
+
+</html>
+
