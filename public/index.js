@@ -7,6 +7,9 @@ window.onload = () => {
   const button = document.querySelector('.button button');
   const winnerSpan = document.querySelector('.winner span');
 
+  wheel.style.transform = `rotate(${state.getRotation()}deg)`;  
+
+
   const onClick = () => {
     let winnerDegrees = randomizer(360);
     let winner = Math.floor(winnerDegrees / 36);
@@ -21,7 +24,6 @@ window.onload = () => {
     state.setData({rotation: winnerDegrees, winner});
     
     button.disabled = true;
-
 
     setTimeout(() => {
       wheel.style.transform = `rotate(${1080 + winnerDegrees}deg)`;      

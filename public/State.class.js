@@ -2,8 +2,7 @@ const storage = window.localStorage;
 
 class State {
     constructor() {    
-      this.data = {};
-      this.getFromStorage();
+      this.data =  this.getFromStorage();     
     }
     
     setData(newData) {
@@ -12,12 +11,23 @@ class State {
     }
     
     saveToStorage() {
-      storage.setItem('casinoData', this.data);
+      storage.setItem('casinoDataWinner', this.data.winner);
+      storage.setItem('casinoDataRotation', this.data.rotation);
+
+      console.log(this.data);
     }
   
     getFromStorage() {
-      let data = storage.getItem('casinoData') || {rotation: 36, winner: "none"};
-      this.setData(data);
+      let data = { winner: storage.getItem('casinoDataWinner'), rotation: storage.getItem('casinoDataRotation') } || {rotation: 36, winner: "none"};
+      return data;
+    }
+
+    getWinner() {
+      return this.data.winner;
+    }
+
+    getRotation() {
+      return this.data.rotation;
     }
   }
 
