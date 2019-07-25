@@ -16,6 +16,7 @@
   align-items: center;
   position: relative;
   transform: rotate(36deg);
+  will-change: transform;
 }
 
 .line {
@@ -86,9 +87,14 @@
   flex-wrap: wrap;
   border: 1px solid black;
   position: absolute;
-  top: 0;
+  top: 28%;
   right: 0;
 }
 
+.betting-block input,
+.betting-block button {
+  width: 125px;
+  box-sizing: border-box;
+}
 
 /*# sourceMappingURL=styles.css.map */
