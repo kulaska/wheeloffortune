@@ -1,24 +1,14 @@
-const storage = window.localStorage;
+import storage from './Storage.class.js';
 
 class State {
     constructor() {    
-      this.data =  this.getFromStorage();     
+      this.data = storage.getFromStorage(['rotation', 'winner']);     
     }
     
     setData(newData) {
-      this.data = Object.assign(this.data, newData);
-      this.saveToStorage();
-    }
-    
-    saveToStorage() {
-      storage.setItem('casinoDataWinner', this.data.winner);
-      storage.setItem('casinoDataRotation', this.data.rotation);      
-    }
-  
-    getFromStorage() {
-      let data = { winner: storage.getItem('casinoDataWinner'), rotation: storage.getItem('casinoDataRotation') } || {rotation: 36, winner: "none"};
-      return data;
-    }
+      this.data = Object.assign(this.data, newData);      
+      storage.sendToStorage(new Map(Object.entries(this.data)));
+    }    
 
     getWinner() {
       return this.data.winner;

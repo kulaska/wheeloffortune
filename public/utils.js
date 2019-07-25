@@ -4,6 +4,12 @@ let rotate = store.rotation;
 
 let keyframes, animation;
 
+const randomizer = (higherBorder) => {
+  let result = Math.floor(Math.random() * higherBorder) + 1;
+  if (result % 36 == 0 || result == 0) result = randomizer(higherBorder);
+  return result;
+};
+
 export function updateKeyFrames(newRotation, newTime) {
   keyframes = `@keyframes roll { 0% 
       { transform: rotateZ(${rotate}deg); }
@@ -24,11 +30,15 @@ export function updateKeyFrames(newRotation, newTime) {
   rotate = newRotation;
 }
 
-export const randomizer = (higherBorder) => {
-    let result = Math.floor(Math.random() * higherBorder) + 1;
-    if (result % 36 == 0 || result == 0) result = randomizer(higherBorder);
-    return result;
+export const getTheWinner = () => {  
+  let winnerDegrees = randomizer(360);
+  let winner = Math.floor(winnerDegrees / 36);
+  winner = winner == 0 ? 10 : winner;
+
+  return {winnerDegrees, winner};
 };
 
-// export function getSumOfWinning
+ export const getSumOfWinning = () => {
+   
+ } 
 
