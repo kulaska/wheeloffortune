@@ -1,14 +1,17 @@
+import storage from './Storage.class.js';
+
 class Account {
     constructor() {
-        this.points = getFromStorage('points');
+        this.points = storage.getFromStorage('points');
     }
 
     getPoints() {
         return this.points;
     }
 
-    setPoints() {
-
+    setPoints(newPoints) {
+        this.points = newPoints;
+        storage.sendToStorage(new Map([['points', this.points]]));
     }    
 }
 

@@ -77,4 +77,18 @@
   position: relative;
 }
 
+.betting-block {
+  width: 230px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
 /*# sourceMappingURL=styles.css.map */
