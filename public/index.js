@@ -1,11 +1,15 @@
 import state from "./State.class.js";
+import Betting from "./Betting.class.js";
+
 import { getTheWinner } from "./utils.js";
 import {
   updateAndAnimate,
   cleanUp,
   wheel,
   time,
-  winnerSpan
+  winnerSpan,
+  select,
+  input
 } from "./DomManipulations.js";
 
 const onClick = () => {
