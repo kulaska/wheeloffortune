@@ -2,7 +2,7 @@ import storage from './Storage.class.js';
 
 class Account {
     constructor() {        
-        this.points = storage.getFromStorage(['points'])['points'] || 5000;
+        this.points = storage.getFromStorage(['points'])['points'] || 50000;
     }
 
     getPoints() {        

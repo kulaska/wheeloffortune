@@ -87,6 +87,8 @@ body {
 
 .wheel-wrapper {
   position: relative;
+  display: flex;
+    align-items: center;
 }
 
 .betting-block {
@@ -123,7 +125,6 @@ body {
 
 .winner {
   margin: 10px;
-  width: 350px;
   text-align: center;
 }
 
