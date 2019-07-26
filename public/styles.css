@@ -1,3 +1,8 @@
+body {
+  font-size: 20px
+}
+
+
 .wrapper {
   width: 720px;
   margin: auto;
@@ -17,6 +22,8 @@
   position: relative;
   transform: rotate(36deg);
   will-change: transform;
+  font-size: 20px
+
 }
 
 .line {
@@ -89,12 +96,35 @@
   position: absolute;
   top: 28%;
   right: 0;
+  border-radius: 7%;
+  background: slategrey;
 }
 
 .betting-block input,
-.betting-block button {
+.betting-block button,
+.betting-block select {
+  font-size: 20px;
   width: 125px;
   box-sizing: border-box;
+}
+
+.betting-block button, .button button {
+  width: 125px;
+  font-size: 20px;
+  justify-content: center;
+  height: 39px;
+  border-radius: 14px;  
+  background: lawngreen;
+  border: 0
+}
+
+.winner {
+  margin: 10px;
+  width: 350px
+}
+
+.message, .win-amount {
+  display: block;
 }
 
 /*# sourceMappingURL=styles.css.map */

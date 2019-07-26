@@ -5,8 +5,8 @@ export default class Betting {
   }
 
   proceedBet(actualWinner) {
-    if (actualWinner === this.numberThatUserExpects) {
-      console.log(this.getSumOfWinning());
+    console.log(this.numberThatUserExpects);    
+    if (actualWinner == this.numberThatUserExpects) {      
       return {
         message: "Congratulations, you won!",
         sumOfWinning: this.getSumOfWinning()

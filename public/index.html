@@ -11,7 +11,9 @@
                 display:flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                position: relative">
+                position: relative;
+                font-size: 20px"
+                >
 
             <div class="wheel-wrapper">
     
@@ -54,7 +56,11 @@
 
                 <div class="button"><button onclick="onClick()">Roll</button></div>
             
-                <div class="winner">The winner is: <span></span></div>
+                <div class="winner">
+                    The winner is: <span></span>
+                    <span class="message"></span>
+                    <span class="win-amount"></span>
+                </div>
 
                 <div class="betting-block">
                     <select class="select">
@@ -70,7 +76,7 @@
                         <option value="10">10</option>
                     </select>
                     <input value="5000" name="money" class="input" />
-                    <button>Make a bet</button>
+                    <button onclick="onSubmit()">Make a bet</button>
                 </div>
         </div>
         

@@ -1,9 +1,8 @@
-import store from './State.class.js';
+import store from '../js/State.class.js';
 
 let rotate = store.rotation;
 
 let keyframes, animation;
-
 
 export default function updateKeyFrames(newRotation, newTime) {
     keyframes = `@keyframes roll { 0% 
