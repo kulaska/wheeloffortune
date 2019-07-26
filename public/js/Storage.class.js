@@ -4,8 +4,7 @@ export class Storage {
     }
 
     getFromStorage(queries) {
-        const response = {};
-        console.log(queries)
+        const response = {};        
         queries.forEach(item => {
             response[item] = this.storage.getItem(item);
         });

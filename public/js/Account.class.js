@@ -5,8 +5,7 @@ class Account {
         this.points = storage.getFromStorage(['points'])['points'] || 5000;
     }
 
-    getPoints() {
-        console.log(this.points)
+    getPoints() {        
         return this.points;
     }
 
