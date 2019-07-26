@@ -2,7 +2,7 @@ import storage from "./Storage.class.js";
 
 class State {
   constructor() {
-    this.data = storage.getFromStorage(["rotation", "winner"]);
+    this.data = storage.getFromStorage(["rotation", "winner"]) || {rotation: 36, winner: "none"};
   }
 
   setData(newData) {

@@ -5,11 +5,12 @@ export class Storage {
 
     getFromStorage(queries) {
         const response = {};
+        console.log(queries)
         queries.forEach(item => {
             response[item] = this.storage.getItem(item);
         });
 
-        return Object.entries(response).length === 0 ? {rotation: 36, winner: "none"} : response;       
+        return Object.entries(response).length === 0 ? null : response;       
     }
 
     // map with tuples name: value 

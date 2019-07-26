@@ -1,5 +1,6 @@
 import updateKeyFrames from "./updateKeyFrames.js";
 import state from "../js/State.class.js";
+import account from '../js/Account.class.js';
 
 const button = document.querySelector(".button button");
 
@@ -11,6 +12,7 @@ export const submit = document.querySelector(".betting-block button");
 export const select = document.querySelector(".betting-block .select");
 export const winAmount = document.querySelector(".winner .win-amount");
 export const winMessage = document.querySelector(".winner .message");
+export const accountAmount = document.querySelector('.account .account__amount');
 
 export const updateAndAnimate = (winnerDegrees, time, winner) => {
   updateKeyFrames(winnerDegrees, time);
@@ -19,6 +21,11 @@ export const updateAndAnimate = (winnerDegrees, time, winner) => {
 
   button.disabled = true;
   submit.disabled = true;
+};
+
+export const updateAccountAmount = () => {
+  console.log(account.getPoints())
+  accountAmount.innerText = account.getPoints();
 };
 
 export const cleanUp = winner => {

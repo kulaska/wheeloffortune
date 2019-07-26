@@ -1,5 +1,6 @@
 import state from "./js/State.class.js";
 import Betting from "./js/Betting.class.js";
+import account from './js/Account.class.js';
 
 import { getTheWinner } from "./utils/utils.js";
 import {
@@ -11,14 +12,17 @@ import {
   select,
   input,
   winAmount,
-  winMessage
+  winMessage,
+  accountAmount,
+  updateAccountAmount
 } from "./utils/DomManipulations.js";
 
 
 const onSubmit = () => {
   if (state.data.bet || state.data.rolling) return; 
-
-  state.setData({bet: true, expectedWinner: select.options[select.selectedIndex].text, sumOfBet: input.value});
+  state.setData({bet: true, expectedWinner: select.options[select.selectedIndex].text, sumOfBet: input.value});  
+  account.setPoints(account.getPoints() - state.data.sumOfBet);
+  updateAccountAmount();  
 }; 
 
 const onClick = () => {  
@@ -52,12 +56,14 @@ const onClick = () => {
       winMessage.innerText = state.data.message;
     }
     state.setData({bet: false, rolling: false});
+    updateAccountAmount();
   }, time * 1000);
 };
 
 window.onload = () => {
   wheel.style.transform = `rotate(${state.getRotation()}deg)`;
-  winnerSpan.innerHTML = state.getWinner();
+  winnerSpan.innerText = state.getWinner();
+  accountAmount.innerText = account.getPoints();
 
   window.onClick = onClick;
   window.onSubmit = onSubmit;

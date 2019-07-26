@@ -1,15 +1,18 @@
+import account from './Account.class.js';
+
 export default class Betting {
   constructor(number, sum) {
     this.numberThatUserExpects = number;
     this.sumOfBet = sum;
   }
 
-  proceedBet(actualWinner) {
-    console.log(this.numberThatUserExpects);    
-    if (actualWinner == this.numberThatUserExpects) {      
+  proceedBet(actualWinner) {    
+    if (actualWinner != this.numberThatUserExpects) {
+      let sum = this.getSumOfWinning();
+      account.setPoints(account.getPoints() + sum);      
       return {
         message: "Congratulations, you won!",
-        sumOfWinning: this.getSumOfWinning()
+        sumOfWinning: sum
       };
     } else
       return {
