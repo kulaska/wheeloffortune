@@ -7,7 +7,7 @@ export default class Betting {
   }
 
   proceedBet(actualWinner) {    
-    if (actualWinner != this.numberThatUserExpects) {
+    if (actualWinner == this.numberThatUserExpects) {
       let sum = this.getSumOfWinning();
       account.setPoints(account.getPoints() + sum);      
       return {
